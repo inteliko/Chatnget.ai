@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	</head>
+	<body>
+
+		<header>
+			<div class="logo">
+			  <img src="{% static 'images/logo.png' %}" alt="Logo">
+			</div>
+			<nav>
+			  <ul class="nav-links">
+				<li><a href="/signin">Login</a></li>
+				<li class="nav-links-join"><a href="/registration">Join Peanut</a></li>
+			  </ul>
+			</nav>
+			
+		</header>
+
+		<section class="heading-container" >
+			<div class="heading-container">
+			  <h1 class="section-heading">A study tool <br>  to grow your mind</h1>
+			  <p class="section-paragraph">Get smarter at School & University with your own affordable AI assistant.</p>
+			  <a href="/registration" class="btn btn-primary">Join Peanut</a>
+			  <br>
+			  <p class="section-paragraph">+1000 students joined</p> 			  <br>
+			</div>			
+		</section>
+
+		<section class="feature-container-three">
+			<div class="row">
+			  <div class="left-column">
+				<img src="{% static 'images/texttoimg.png' %}" alt="Image Description" class="image">
+			  </div>
+			  <div class="right-column">
+				<h2 class="section-heading-feature">Bring life to your words </h2>
+				<p class="section-paragraph-feature">Bring your writing to life with Text to Image's effortless design tools. </p>
+				
+			  </div>
+			</div>
+		</section>
+
+		<section class="feature-container">
+			<div class="row">
+			  <div class="left-column">
+				<img src="{% static 'images/aiwriting.png' %}" alt="Image Description" class="image">
+			  </div>
+			  <div class="right-column">
+				<h2 class="section-heading-feature">Write Better Papers, Fast.</h2>
+				<p class="section-paragraph-feature">Get the A+ you derserve with Peanut writting assistance by your side.</p>
+				
+			  </div>
+			</div>
+		</section>
+
+		<section class="feature-container-two">
+			<div class="row">
+			  <div class="left-column">
+				<img src="{% static 'images/code.png' %}" alt="Image Description" class="image">
+			  </div>
+			  <div class="right-column">
+				<h2 class="section-heading-feature">Learn to code,  your way.</h2>
+				<p class="section-paragraph-feature">From python to java, Peanut is your one-stop-solution for coding help.</p>
+				
+			  </div>
+			</div>
+		</section>
+
+		
+
+
+	
+
+
+		  
+
+		
+	
+		  
+		
+
+		
+		<script src="{% static 'js/script.js' %}" async defer></script>
+	</body>
+
+
+</html>

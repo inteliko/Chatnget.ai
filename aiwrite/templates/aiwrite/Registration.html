@@ -1,0 +1,65 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Peanut</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	
+
+
+
+<section class="registration">
+	<h2>Join Peanut!</h2>
+	<p> Let’s get you an account for the most powerful academic weapon </p>
+
+	{% for message in messages%}
+	<div class="alert alert-{{ message.tags }} alert-dismissibble fade show" role="alert">
+	 <strong> Message: </strong> {{ message }}
+	 <button type="button" class="close" data-dismiss="alert" aria-label="close">
+	<span aria-hidden="true">&times; </span>
+	</button>
+	</div>	
+
+	{% endfor %}
+
+	<form action="/registration" method="POST">
+
+		{% csrf_token %}
+
+
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input type="text" id="username" name="username" required>
+		</div>
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" required>
+		</div>
+		
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" required>
+		</div>
+		<div class="form-group">
+			<label for="confirm-password">Confirm Password</label>
+			<input type="password" id="confirm-password" name="confirmpassword" required>
+		</div>
+		
+		<div class="form-group">
+			<label for="terms-and-conditions">I agree to the Terms and Conditions</label>
+			<input type="checkbox" id="terms-and-conditions" name="terms-and-conditions" required>
+		</div>
+		<button type="submit">Create Account</button>
+
+		<h4> Already have Account? </h4> 
+		<button> <a href="/signin">Sign In</a> </button>
+	</form>
+
+
+	
+</section>

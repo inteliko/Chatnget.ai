@@ -1,0 +1,149 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+	<title>Peanut</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<div class="logo">
+			<img src="{% static 'images/logo.png' %}" alt="Logo">
+		  </div>
+		<ul class="side-menu top">
+			
+			<li>
+				<a href="#">
+					<i class='bx bx-edit' ></i>
+					<span class="text">ChatNGet</span>
+				</a>
+			</li>
+		
+		
+			<li>
+				<a href="#">
+					<i class='bx bx-images' ></i>
+					<span class="text">Text to Image</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="https://www.facebook.com/groups/527672869376425">
+					<i class='bx bx-images' ></i>
+					<span class="text">Join Community</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="#">
+					<i class='bx bx-images' ></i>
+					<span class="text">Upgrade plan</span>
+				</a>
+			</li>
+			
+		</ul>
+		<ul class="side-menu">
+			
+			<li>
+				<a href="/signout" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			
+			
+			<li>
+				<a href="/signout" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+			
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Text to Image</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Text to image</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+
+			<ul class="box-info">
+
+				<li>
+					<form id="chat-form" method="post">
+						{% csrf_token %}
+							<input type="text" id="user-input" name="user_input" placeholder="Type your prompt here...">
+							<button type="submit">Submit</button>
+	
+						</form>
+				</li>
+				<li>
+					{% if object %}
+						<div>
+							{{ object.phrase }}
+							<br>
+							<img src="{{ object.ai_image.url }}" alt="{{ object.phrase }}">
+							<br>
+							<a href="{% url 'download_image' object.id %}" class="btn btn-primary">Download</a>
+						</div>
+					{% endif %}
+
+
+						
+
+
+
+				</li>
+
+	
+				
+			</ul>
+
+
+
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+
+	<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

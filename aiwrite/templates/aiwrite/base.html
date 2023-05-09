@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chatnget</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<nav>
+		<div class="logo">
+			<img src="logo.png" alt="logo">
+		</div>
+		<input type="checkbox" id="click">
+		<label for="click" class="menu-btn">
+			<i class="fas fa-bars"></i>
+		</label>
+		<ul>
+			<li><a href="/home">Home</a></li>
+			<li><a href="#">Subscription</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">About</a></li>
+
+			{% if user.is_authenticated %}
+
+			<h3> {{ username }} </h3>
+
+			
+			<ul> <li><a href="/signout">Logout</a></li> </ul>
+
+			{% endif %}
+
+			<li><a href="/signin">Sign In</a></li>
+			<li><a href="/registration">Sign Up</a></li>
+
+		</ul>
+	</nav>
+
+	<section class="first-section">
+		<div class="left">
+			<h1> Picture Your Words</h1>
+			<p>Transforming Text into Stunning Visuals</p>
+			<button  href="/registration"> </a> > Let's Start  </button>
+		</div>
+		<div class="right">
+			<div class="scrolling-container">
+				<img src="{% static 'images/image6.png' %}">
+				<img src="{% static 'images/image5.png' %}">
+	
+
+
+
+
+
+
+				 <!--Add as many images as you want-->
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+	
+
+	{% for message in messages%}
+	<div class="alert alert-{{ message.tags }} alert-dismissibble fade show" role="alert">
+	 <strong> Message: </strong> {{ message }}
+	 <button type="button" class="close" data-dismiss="alert" aria-label="close">
+	<span aria-hidden="true">&times; </span>
+	</button>
+	</div>	
+
+	{% endfor %}
+
+
+
+
+
+
+
+
+
+	{% if user.is_authenticated %}
+
+	<h3> Hello {{ username }} </h3>
+
+	<h4> You are successfully loggedin </h4>
+	<li><a href="/signout">Logout</a></li>
+
+	{% endif %}
+
+	<script src="script.js"></script>
+</body>
+</html>
