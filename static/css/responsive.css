@@ -1,0 +1,82 @@
+@media only screen and (max-width: 768px) {
+
+    .logo img {
+      height: 100px;
+      padding-left: 20px;
+    }
+  
+    .logo-middle {
+      height: 80px;
+      padding: 0;
+      margin: 0 auto;
+    }
+  
+    nav {
+      padding: 10px;
+      display: flex;
+    }
+  
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+  
+    .nav-links a {
+      font-size: 20px;
+      padding: 10px;
+    }
+  
+    .nav-links-join {
+      font-size: 16px;
+      padding: 8px 20px;
+    }
+
+
+    .heading-container {
+	
+        margin: 0 auto;
+        padding:  0px;
+        margin-top: 250px;
+        text-align: center;
+      }
+      
+      .section-heading {
+        font-size: 35px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        color: #04AA6D;
+    
+      }
+      
+      .section-paragraph {
+        font-size: 28px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+      .section-heading-feature {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .section-paragraph-feature {
+        font-size: 20px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 50%;
+        text-align: center;
+    }
+}
+  

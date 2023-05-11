@@ -2,7 +2,26 @@
 	padding: 0%;
 	margin: 0%;
 }
+
+
+
+
+
+  /* Mobile Screen responsive */ 
+
+
+
+
+
+
+
+
+
 /* Header CSS */ 
+
+
+
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -109,7 +128,6 @@ header {
 	
 	
 }
-
 
 /* First Section CSS */
 
@@ -1322,5 +1340,3 @@ body {
   .yearly .subscribe-button {
 	background-color: #31a432;
   }
-  
-
