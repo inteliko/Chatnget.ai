@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['*']
 
 #CSRF TOKEN
 
+CSRF_TRUSTED_ORIGINS = ['chatngetai-production.up.railway.app']
 
 
 # Application definition
