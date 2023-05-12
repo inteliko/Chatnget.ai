@@ -11,6 +11,8 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
 
 
 	<title>Peanut</title>
@@ -79,14 +81,32 @@
 		<nav>
 			
 			
-			<li>
-				{% if user.is_authenticated %}
-
-				<i class='bx bxs-dashboard' ></i>
-				<span class="text">Welcome, {{ username }} &hearts;</span>
-				{% endif %}
-			</li>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
 			
+
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			
+			
+			
+			
+			
+			<ul>
+				<li> 
+					<a href="#">
+						{% if user.is_authenticated %}
+		
+						<i class='bx bxs-dashboard' ></i>
+						<span class="text">Welcome, {{ username }} &hearts;</span>
+						{% endif %}
+					</a>
+				</li> 
+
+				
+
+			</ul> 
+
 		</nav>
 		<!-- NAVBAR -->
 
@@ -148,7 +168,77 @@
 		</main>
 		<!-- MAIN -->
 	</section>
-	<!-- CONTENT -->
+
+
+	<!-- Javascript -->
+
+
+	<script>
+
+		const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
+
+		allSideMenu.forEach(item=> {
+			const li = item.parentElement;
+
+			item.addEventListener('click', function () {
+				allSideMenu.forEach(i=> {
+					i.parentElement.classList.remove('active');
+				})
+				li.classList.add('active');
+			})
+		});
+
+
+
+	// TOGGLE SIDEBAR
+	const menuBar = document.querySelector('#content nav .bx.bx-menu');
+	const sidebar = document.getElementById('sidebar');
+
+	menuBar.addEventListener('click', function () {
+		sidebar.classList.toggle('hide');
+	})
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		const switchMode = document.getElementById('switch-mode');
+
+		switchMode.addEventListener('change', function () {
+			if(this.checked) {
+				document.body.classList.add('dark');
+			} else {
+				document.body.classList.remove('dark');
+			}
+		})
+
+	 </script>
+
+
+
+
 
 
 
