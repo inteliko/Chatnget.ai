@@ -148,7 +148,7 @@ def imgtotxt(request):
         user_input = request.POST.get('user_input')
         response = openai.Image.create(
             prompt=user_input,
-            size='256x256' #'512x512'
+            size= '512x512'
         )
 
         img_url = response["data"][0]["url"]
